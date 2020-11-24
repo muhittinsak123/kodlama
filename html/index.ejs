@@ -1,0 +1,107 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="container">
+  
+	 <div class="jumbotron">
+		<div align="center">
+			<img src="http://darkmo.net/forum/resimler/sitelogo.png" width="180px" height="180px" class="d-inline-block align-top rounded-circle" alt=""><br><br>
+      <h3><b>Darkmo Kod Paylaşım Sitesi</b></h3>
+					<p style="font-size:15px; color:lightgrey">Darkmo Kod Paylaşım Sitemize Hoş Geldiniz Sitemizde Altyapı ve JS+ Komutlarını Görüntüleyebilirsiniz.
+                   <br><br>
+        <strong>Javascript+</strong>: <strong>20</strong> davet ile alınır.<br>
+        <strong>Altyapı</strong>: <strong>10</strong> davet ile alınır.<br>
+            <br>
+
+					
+      
+          <a href="/hakkimizda" class="btn btn-default" style="background-color:#f77130; color:#fff"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Detaylı bilgi</a>
+      		<a href="https://discord.gg/gKmF7s2" class="btn btn-default" style="background-color:#f77130; color:#fff"><i class="fa fa-paper-plane" aria-hidden="true"></i> Discord sunucumuz</a>
+
+
+   <br>
+<br>
+
+
+  
+</div></div></div>
+<style>
+.cardimg img {
+    transition: 1s ease;
+}
+.card-img-top {
+    width: 50%;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #D49818;
+}
+.botresim {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #D49818;
+  }
+.card-img img:hover {
+-webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+transition: 1s ease;
+}
+.button_slide {
+  color: #FFF;
+  border: 2px solid #D49818;
+  border-radius: 8px;
+  padding: 5px 5px;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D49818;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_down:hover {
+  box-shadow: inset 0 100px 0 0 #D49818;
+}
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #D49818;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #D49818;
+}
+
+.slide_diagonal:hover {
+  box-shadow: inset 400px 50px 0 0 #D49818;
+}
+
+#outer {
+  width: 364px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+</style>
+<script>
+$(document).ready(function(){
+ $("#ara").keyup(function(){
+    var value = $(this).val().toLowerCase();
+    $(".col-12, .col-sm-6, .col-md-4 .card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  //etiket filtresi
+  $("#etiketselect").change(function(){
+    var value = $(this).val();
+    if (value === 'noneFilter') {
+      window.location.reload(true);
+      return
+    }
+    $(".col-12, .col-sm-6, .col-md-4 .card").filter(function(){
+      $(this).toggle($(this).text().indexOf(value) > -1)
+    });
+  })
+  ;
+});
+</script>
+<% include ./ek/footer %>

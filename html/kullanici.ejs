@@ -1,0 +1,54 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="container">
+  <div align="center" class="jumbotron">
+
+       <div class="uyeprofil" ><img src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>.png?size=512" class="rounded-circle panell"></div>
+       <h3 style="color:#fff"><%=kisi.username%>#<%=kisi.discriminator%></h3>
+
+
+    
+    
+<style>
+.card-img-top {
+    width: 50%;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #D49818;
+}
+.button_slide {
+  color: #FFF;
+  border: 2px solid #D49818;
+  background-color:#D49818;
+  border-radius: 8px;
+  padding: 1px 1px;
+  display: inline-block;
+  font-family:'Poppins', sans-serif;
+  font-size: 4px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D49818;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.button_slide:hover{
+   background-color:#b27d0e;
+  }
+
+#outer {
+  width: 364px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+.jumbotron{
+background-image: url(https://i.postimg.cc/15TN17rQ/xirprofilback.jpg);
+  }
+.card-img-top{
+width:50%
+  }
+.uyeprofil img:hover{
+transform: rotateY(180deg);
+  }
+</style>
+</div></div>
+<% include ./ek/footer %>

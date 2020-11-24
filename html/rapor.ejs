@@ -1,0 +1,24 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="container">
+	<div class="jumbotron">
+		<div align="center">
+      <form method="POST">
+      <select id="mesaj-1" name="mesaj-1">
+        <option selected disabled>Sebep seçiniz.</option>
+        <option value="Komut Hatalı">Komut Hatalı</option>
+        <option value="Link Bozuk">Link Bozuk</option>
+        <option value="Diğer...">Diğer...</option>
+      </select>
+      <br>
+    <br>
+      <h6 style="color:#fff">Rapor etme sebebini yukarıda bulamadın mı?</h6>
+      <input type="text" id="mesaj-2" name="mesaj-2" placeholder="Rapor etme sebebini yazınız.">
+ <br>
+        <button class="btn btn-danger" type="sumbit">Rapor Et</button>
+      </form>
+    </div>
+</div>
+</div>
+      <br>
+      <br>
+<% include ./ek/footer %>

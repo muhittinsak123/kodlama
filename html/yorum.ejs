@@ -1,0 +1,27 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="container">
+	<div class="jumbotron">
+		<div align="center">
+      <form method="POST">
+      <select id="yorum-1" name="yorum-1">
+        <option selected disabled>Yıldız</option>
+        <option value=":star2: :star: :star: :star: :star:">1 Yıldız</option>
+        <option value=":star2: :star2: :star: :star: :star:">2 Yıldız</option>
+        <option value=":star2: :star2:  :star2: :star: :star:">3 Yıldız</option>
+        <option value=":star2: :star2:  :star2: :star2::star:">4 Yıldız</option>
+        <option value=":star2: :star2:  :star2: :star2::star2:">5 Yıldız</option>
+
+      </select>
+      <br>
+    <br>
+      <h6 style="color:#fff">Yorum</h6>
+      <input type="text" id="yorum-2" name="yorum-2" placeholder="Komut Yorumunu Yazınız.">
+ <br>
+        <button class="btn btn-danger" type="sumbit">Yorumu Gönder</button>
+      </form>
+    </div>
+</div>
+</div>
+      <br>
+      <br>
+<% include ./ek/footer %>

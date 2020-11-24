@@ -1,0 +1,179 @@
+<%- include('ek/header', {bot, user, path}) %>
+<style>
+  body{
+background-color:#1e1e1e ;
+}
+</style>
+<div class="card" style="margin-left: 10%; margin-right: 10%;margin-top: 5px;margin-bottom: 10px;box-shadow:0 8px 16px 0 rgba(0, 0, 0, 1.2); background-color:#1e1e1e; border-radius:22px;overflow:hidden;border-color:#2C2F33;">
+ 
+<div class="container" >
+<br>
+<h3 align="center" style="color:white">
+    <strong>Altyapılar
+    </strong></h3>
+  <div align="center"><p>Burada Altyapılar Yer Almaktadır. <br></p></div>
+  <br>
+ <div align="center">
+    <input type="search" placeholder="Komut ara..." id="ara" name="ara">
+    <br>
+    
+  <div align="center">
+
+    
+  </div>
+  <br><br><br>
+    
+  <div class="row">
+  
+   <% if (bot.ayar.has('botlar')) { %>
+  <% const sorted = Object.keys(bot.ayar.fetch('botlar')).sort((a, b) => { return (bot.ayar.fetch(`botlar.${b}.oy`) || 0) - (bot.ayar.fetch(`botlar.${a}.oy`) || 0) }) %>
+  <% const top = sorted.splice(0, Object.keys(bot.ayar.fetch('botlar')).length) %>
+  <% const map = top.map(x=>x) %>
+	<% for(var i = 0; i < Object.keys(bot.ayar.fetch('botlar')).length; i++) { %>
+  <% let idd = map[i] %>
+   <% if(bot.ayar.has(`botlar.${idd}.durum`) === true) { %>
+		<% if (bot.ayar.fetch(`botlar.${idd}.durum`) === "Elmas") { %>
+
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="card card-lg botcard" style="box-shadow:10px 10px 10px rgba(0,0,0,0.1);border-radius:22px;overflow:hidden;border-color:#2C2F33;width:18rem;">
+        <div class="card card-lg botcard" style="box-shadow:10px 10px 10px rgba(0,0,0,0.1);border-radius:22px;overflow:hidden;border-color:#2C2F33;width:18rem;">                              
+                     
+          </div>
+      <div align="center" style="background-color:#1e1e1e" class="card-body">
+
+  <h6 style="font-size:17px; color:#f77130">Kütüphane</h6>
+                       <div style="font-size:17px; color:"><%=bot.ayar.fetch(`botlar.${idd}.kutuphane`)%></div>
+                              
+ <div class="card-title">
+                               <hr>
+
+  <h6 style="font-size:17px; color:#f77130">Komut İsmi</h6>
+  <h6 style="color:"><%=bot.ayar.fetch(`botlar.${idd}.prefix`)%></h6>  
+                                <hr>
+
+ <h6 style="font-size:17px; color:#f77130">Komut Açıklaması</h6>
+                     <p class="card-text" style="color:"><%=bot.ayar.fetch(`botlar.${idd}.kisaaciklama`)%></p> 
+
+                               <hr>
+
+                                <h6 style="font-size:17px; color:#f77130">Ekleyen <h6 style="color:"> <%=bot.ayar.fetch(`botlar.${idd}.sahip`) %></h6></div>         
+                        
+
+                               <hr>
+        <a href="https://devturkiye.xyz/komut/<%=idd%>/rapor"><button class="btn btn-outline-danger my-2 my-sm-0"><i aria-hidden="true"></i>⛳ Rapor</h3></button>         <a href="https://devturkiye.xyz/komut/<%=idd%>/yorum"><button class="btn btn-outline-success my-2 my-sm-0"><i aria-hidden="true"></i>🌟 Yorum</h3></button> 
+
+<br/>
+<br/>
+
+           <%if (bot.ayar.has(`botlar.${idd}.site`)){%>
+                 <a href="<%=bot.ayar.fetch(`botlar.${idd}.site`)%>"  ><button class="button btn "style="font-size:20px; text-decoration:none; color:#23272A; background-color:#e08640" >Görüntüle</button></a> <% if (user) { %>
+<br>         
+<br>         
+ <% if(bot.ayar.fetch(`botlar.${idd}.sahipid`) === user.id) { %>
+       <button class="btn"href="/kullanici/<%=user.id%>/duzenle/<%=idd%>" style="font-size:20px; text-decoration:none; color:#23272A; background-color:#55ceab">Düzenle</button></a></h6>
+          <% } %>
+        <% } %>
+ <%} %>
+<br>
+
+      
+                            </div>
+                       </div><br>
+    </div>
+      <% } %>
+    <% } %>
+   <% } %>
+   <% } else {%>
+   <center><h5 style="color:#222">
+     Sistemde hiç bot bulunmuyor.
+     </h5></center>
+   <% } %>
+   </div></div></div></div>
+
+
+<style>
+#etiketler {
+    font-size: 0.8em;
+    color:#222;
+  }
+.cardimg img {
+    transition: 1s ease;
+}
+.card-img-top {
+    width: 50%;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #D49818;
+}
+.botresim {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #D49818;
+  }
+.card-img img:hover {
+-webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+transition: 1s ease;
+}
+.button_slide {
+  color: #FFF;
+  border: 2px solid #D49818;
+  border-radius: 8px;
+  padding: 5px 5px;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D49818;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_down:hover {
+  box-shadow: inset 0 100px 0 0 #D49818;
+}
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #D49818;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #D49818;
+}
+
+.slide_diagonal:hover {
+  box-shadow: inset 400px 50px 0 0 #D49818;
+}
+
+#outer {
+  width: 364px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+</style>
+<script>
+$(document).ready(function(){
+ $("#ara").keyup(function(){
+    var value = $(this).val().toLowerCase();
+    $(".col-12, .col-sm-6, .col-md-4 .card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  //etiket filtresi
+  $("#etiketselect").change(function(){
+    var value = $(this).val();
+    if (value === 'noneFilter') {
+      window.location.reload(true);
+      return
+    }
+    $(".col-12, .col-sm-6, .col-md-4 .card").filter(function(){
+      $(this).toggle($(this).text().indexOf(value) > -1)
+    });
+  })
+  ;
+});
+</script>
+<% include ./ek/footer %>
